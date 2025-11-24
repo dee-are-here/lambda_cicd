@@ -23,7 +23,7 @@ jobs:
       python -m install --upgrade pip
       pip install -r lambda/requirements.txt
 
-  - name: Configure AWS Creds #Sets up out AWS credentials
+  - name: Configure AWS Creds #Sets up our AWS credentials
     uses: aws-actions/configure-aws-credentials@v1
     with:
       aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
