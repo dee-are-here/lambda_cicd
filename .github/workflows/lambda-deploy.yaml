@@ -2,18 +2,18 @@
 name: Deploy AWS Lambda
 on: 
   push:
-  branches:
-    - main
+    branches:
+      - main
     paths:
-      - 'lambda/'
+        - 'lambda/'
 
 jobs:
   deploy-lambda: #Name of the job
   runs-on: ubuntu-latest # Sets or specifies the runner environment
   steps:
-  - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
 
-  - name: Set Up Python #Sets up our python environment
+  - name: Set up Python #Sets up our python environment
     uses: actions/setup-python@v2
     with: 
       python-version: '3.12'
