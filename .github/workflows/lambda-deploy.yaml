@@ -20,8 +20,8 @@ jobs:
 
   - name: Install Dependencies #Installs dependencies or packages from requirements.txt
     run: |
-      python -m install --upgrade pip
-      pip install -r lambda/requirements.txt
+      python -m pip install --upgrade pip
+      pip install -r lambda/requirements.txt -t lambda/
 
   - name: Configure AWS Creds #Sets up our AWS credentials
     uses: aws-actions/configure-aws-credentials@v1
@@ -34,4 +34,4 @@ jobs:
     run: |
       cd lambda
       zip -r lambda.zip .
-      aws Lambda update-function-code --function-name my-test-cicd-lambda --zip-file fileb://lambda.zip
+      aws lambda update-function-code --function-name my-test-cicd-lambda --zip-file fileb://lambda.zip
