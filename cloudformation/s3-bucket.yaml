@@ -11,17 +11,17 @@ Parameters:
       - production
 
 Resources:
-    MyS3Bucket:
+    MyS3BucketDRW:
       Type: 'AWS::S3::Bucket'
       Properties:
         BucketName: !Sub '${AWS::StackName}-${Environment}-bucket'
         Tags:
-          - Key: Environment
+          - Key: Environment # Tag key
             Value: !Ref Environment
           - Key: Project
             Value: GithubActionsTesting
   
 Outputs:
   BucketName:
-    Description: "Name of the created S3 bucket"
-    Value: !Ref MyS3Bucket
+    Description: "Name of the created S3 bucket" # Output description
+    Value: !Ref MyS3BucketDRW
